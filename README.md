@@ -51,7 +51,7 @@ uv run pytest -q
 from toolkit import setup_job, tool_output_dir
 
 setup_job(__file__, log_file=True)
-out = tool_output_dir("data_ingest", "intake_tool", env="prod", create=True)
+out = tool_output_dir("data_dev", "intake_tool", env="prod", create=True)
 ```
 
 ## 日志与 `--debug`

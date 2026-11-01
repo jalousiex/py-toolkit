@@ -87,9 +87,9 @@ def test_get_output_dir(tmp_path, monkeypatch):
 
 def test_tool_output_dir_adds_group_and_env(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
-    out = tool_output_dir("data_ingest", "intake_tool", "2table_ddl", env="prod", create=True)
+    out = tool_output_dir("data_dev", "intake_tool", "2table_ddl", env="prod", create=True)
 
-    assert out == tmp_path / "output" / "data_ingest" / "intake_tool@prod" / "2table_ddl"
+    assert out == tmp_path / "output" / "data_dev" / "intake_tool@prod" / "2table_ddl"
     assert out.is_dir()
 
 
