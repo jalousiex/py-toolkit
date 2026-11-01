@@ -70,3 +70,13 @@ out = tool_output_dir("data_dev", "intake_tool", env="prod", create=True)
 ## 版本
 
 `pyproject.toml` 的 `version` 为唯一来源；发版打 tag（`v0.1.0`），引用方按 tag 固定。
+
+## 发布
+
+PyPI 走 GitHub Actions + Trusted Publishing（OIDC，不用 API token）：
+
+- 先手动跑 `publish-test`（`workflow_dispatch`）发 TestPyPI 验证，不占正式版本号；
+- 正式发布：`pyproject.toml` 升版本 → 打 tag `v*` → push tag，`publish` 工作流构建并上传。
+- 工作流会先校验 tag 与 `pyproject.toml` 的 `version` 一致，不一致直接失败（PyPI 同版本不可覆盖）。
+- GitHub 仓库需要预先配置 PyPI 的 pending publisher（Owner / Repository / Workflow / Environment 四项与工作流一致）。
+
