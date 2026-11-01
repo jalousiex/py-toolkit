@@ -10,7 +10,13 @@
 
 ## 安装
 
-从 tag 安装（跨仓依赖固定到 tag，不跟浮动分支）：
+从 PyPI 安装（发版后）：
+
+```bash
+uv add small_toolkit
+```
+
+固定到 tag 的 git 安装（尚未发版时用）：
 
 ```bash
 uv add "small_toolkit @ git+https://github.com/jalousiex/py-toolkit.git@v0.1.1"
