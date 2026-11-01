@@ -1,4 +1,4 @@
-# py-toolkit
+# small_toolkit
 
 纯标准库的通用 Python 小工具集合：产物目录、日志初始化、命令行参数、终端表格。
 
@@ -13,7 +13,7 @@
 从 tag 安装（跨仓依赖固定到 tag，不跟浮动分支）：
 
 ```bash
-uv add "py-toolkit @ git+https://github.com/jalousiex/py-toolkit.git@v0.1.0"
+uv add "small_toolkit @ git+https://github.com/jalousiex/py-toolkit.git@v0.1.1"
 ```
 
 本地开发：
@@ -27,12 +27,12 @@ uv run pytest -q
 
 | 模块 | 内容 |
 | --- | --- |
-| `toolkit.outputs` | `output_root` / `output_dir` / `get_output_dir` / `tool_output_dir` / `display_path` / `env_suffix` / `tool_dir_name` / `save_json` / `write_json` / `save_bytes` / `save_response` |
-| `toolkit.logs` | `setup_job`（控制台着色 + 延迟建目录的文件日志）/ `set_log_env` / `add_debug_argument` / `enable_debug_logging` |
-| `toolkit.cli` | `add_grouped_subparsers` / `add_parameter` / `resolve_parameters` / `resolve_env_var` |
-| `toolkit.table` | `print_table` / `print_grouped_table` / `print_tree` |
+| `small_toolkit.outputs` | `output_root` / `output_dir` / `get_output_dir` / `tool_output_dir` / `display_path` / `env_suffix` / `tool_dir_name` / `save_json` / `write_json` / `save_bytes` / `save_response` |
+| `small_toolkit.logs` | `setup_job`（控制台着色 + 延迟建目录的文件日志）/ `set_log_env` / `add_debug_argument` / `enable_debug_logging` |
+| `small_toolkit.cli` | `add_grouped_subparsers` / `add_parameter` / `resolve_parameters` / `resolve_env_var` |
+| `small_toolkit.table` | `print_table` / `print_grouped_table` / `print_tree` |
 
-顶层 `toolkit` 已重导出全部公开 API，`from toolkit import setup_job, tool_output_dir` 即可。
+顶层 `small_toolkit` 已重导出全部公开 API，`from small_toolkit import setup_job, tool_output_dir` 即可。
 
 ## 产物目录约定
 
@@ -48,7 +48,7 @@ uv run pytest -q
   换行、非序列化对象按 `str()` 落盘，`write_json` 末尾补换行。
 
 ```python
-from toolkit import setup_job, tool_output_dir
+from small_toolkit import setup_job, tool_output_dir
 
 setup_job(__file__, log_file=True)
 out = tool_output_dir("data_dev", "intake_tool", env="prod", create=True)
@@ -69,7 +69,7 @@ out = tool_output_dir("data_dev", "intake_tool", env="prod", create=True)
 
 ## 版本
 
-`pyproject.toml` 的 `version` 为唯一来源；发版打 tag（`v0.1.0`），引用方按 tag 固定。
+`pyproject.toml` 的 `version` 为唯一来源；发版打 tag（`v0.1.1`），引用方按 tag 固定。
 
 ## 发布
 

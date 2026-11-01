@@ -1,7 +1,7 @@
-"""py-toolkit：纯标准库的通用小工具（产物目录 / 日志 / 命令行 / 终端表格）。
+"""small_toolkit：纯标准库的通用小工具（产物目录 / 日志 / 命令行 / 终端表格）。
 
-分区：:mod:`toolkit.outputs` 路径与落盘、:mod:`toolkit.logs` 日志初始化、
-:mod:`toolkit.cli` 命令行参数、:mod:`toolkit.table` 终端表格。全部零第三方依赖、
+分区：:mod:`small_toolkit.outputs` 路径与落盘、:mod:`small_toolkit.logs` 日志初始化、
+:mod:`small_toolkit.cli` 命令行参数、:mod:`small_toolkit.table` 终端表格。全部零第三方依赖、
 不读凭据、不含内网地址。
 """
 

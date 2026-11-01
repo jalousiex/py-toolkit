@@ -11,7 +11,7 @@ import sys
 
 import pytest
 
-from toolkit.logs import _ColorFormatter, add_debug_argument, enable_debug_logging, setup_job
+from small_toolkit.logs import _ColorFormatter, add_debug_argument, enable_debug_logging, setup_job
 
 
 class _TtyStream(io.StringIO):

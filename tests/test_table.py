@@ -1,6 +1,6 @@
 """终端表格输出：对齐宽度与上下边线开关。"""
 
-from toolkit import print_grouped_table, print_table
+from small_toolkit import print_grouped_table, print_table
 
 
 def _capture(capsys, headers, rows, **kwargs):

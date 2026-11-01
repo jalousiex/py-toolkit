@@ -4,7 +4,7 @@ import argparse
 
 import pytest
 
-from toolkit import add_grouped_subparsers, add_parameter, resolve_env_var, resolve_parameters
+from small_toolkit import add_grouped_subparsers, add_parameter, resolve_env_var, resolve_parameters
 
 
 def test_add_grouped_subparsers_formats_groups_and_footer():

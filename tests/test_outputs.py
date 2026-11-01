@@ -5,7 +5,7 @@ import logging
 from datetime import datetime
 from pathlib import Path
 
-from toolkit import (
+from small_toolkit import (
     display_path,
     get_output_dir,
     output_root,
