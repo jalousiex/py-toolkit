@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# 环境与缓存
+.venv/
+.pytest_cache/
+
+# 构建
+build/
+dist/
+*.egg-info/
+
+# 运行时产物（本地）
+output/
+_tmp_*
