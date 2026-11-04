@@ -7,6 +7,7 @@
 - **零第三方依赖**：只用标准库（`pathlib` / `logging` / `argparse` / `unicodedata`）。
 - **无凭据、无内网地址**：不读环境里的密钥，不内置任何内网域名；环境变量只做**名字**层面的回退。
 - 只抽跨项目复用的通用能力，业务逻辑（平台 SDK、数据源客户端、领域规则）留在各自仓库。
+- **不接收需要三方依赖或本机环境的能力**（如 SSH、端口转发、系统命令调用）：这些留在各自的本地工具包。
 
 ## 安装
 
@@ -19,7 +20,7 @@ uv add small_toolkit
 固定到 tag 的 git 安装（尚未发版时用）：
 
 ```bash
-uv add "small_toolkit @ git+https://github.com/jalousiex/py-toolkit.git@v0.1.1"
+uv add "small_toolkit @ git+https://github.com/jalousiex/py-small_toolkit.git@v0.1.1"
 ```
 
 本地开发：
