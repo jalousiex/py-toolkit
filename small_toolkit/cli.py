@@ -133,7 +133,8 @@ def resolve_env_var(env: str, base_name: str) -> str | None:
             part = part.strip()
             if "=" in part:
                 k, v = part.split("=", 1)
-                if k.strip() == env:
+                # 环境键大小写不敏感：PROD=/Prod= 与 prod= 等价
+                if k.strip().lower() == env.strip().lower():
                     return v.strip()
     # 2. 单环境变量 {KEY}_{ENV}
     env_val = os.environ.get(f"{base_name}_{env.upper()}", "").strip()

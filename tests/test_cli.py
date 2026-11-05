@@ -90,6 +90,14 @@ def test_resolve_env_var_reads_list_first(monkeypatch):
     assert resolve_env_var("tst", "TOOLKIT_TEST_URL") == "a:8030"
 
 
+def test_resolve_env_var_list_key_is_case_insensitive(monkeypatch):
+    monkeypatch.setenv("TOOLKIT_TEST_URL_LIST", "PROD=b:8030;Uat=c:8030")
+    monkeypatch.setenv("TOOLKIT_TEST_URL", "native")
+
+    assert resolve_env_var("prod", "TOOLKIT_TEST_URL") == "b:8030"
+    assert resolve_env_var("uat", "TOOLKIT_TEST_URL") == "c:8030"
+
+
 def test_resolve_env_var_prefers_single_env_then_native_for_prod(monkeypatch):
     monkeypatch.setenv("TOOLKIT_TEST_URL", "native")
     assert resolve_env_var("prod", "TOOLKIT_TEST_URL") == "native"
